@@ -1,0 +1,15 @@
+{
+  "private": true,
+  "workspaces": [
+    "./host",
+    "./remote"
+  ],
+  "scripts": {
+    "clear": "cd host && rm -rf node_modules && rm -rf .next && cd ../remote && rm -rf node_modules && rm -rf dist",
+    "build": "yarn --cwd host build",
+    "serve": "concurrently \"yarn --cwd remote start\"  \"yarn --cwd host start\""
+  },
+  "dependencies": {
+    "concurrently": "7.0.0"
+  }
+}
